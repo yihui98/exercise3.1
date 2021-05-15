@@ -6,6 +6,7 @@ var morgan = require('morgan')
 
 app.use(express.json())
 app.use(morgan('tiny'))
+app.use(express.static('build'))
 
 
 let persons =  [
@@ -106,9 +107,6 @@ app.post('/api/persons', (request, response) => {
     }
   
     persons = persons.concat(person)
-    
-    
-  
     response.json(person)
   })
 
